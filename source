@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+using namespace std;
+void main()
+{
+	time_t ctime = time(0);
+	srand( ctime );
+	int rn = rand() % 100 + 1;
+	int num=-1;
+	setlocale(LC_ALL, "rus");
+	cout << "Загадано число о 1 до 100. Вы должны его отгадать."<<endl<<"Введите ваше число и нажмите Enter." << endl;
+	while (num != rn)
+		{
+		cin >> num;
+		if (num > rn)
+			cout << "Число меньше. Попробуйте еще раз." << endl;
+		if (num < rn)
+			cout << "Число больше. Попробуйте еще раз." << endl;
+		if (num == rn)
+			cout << "Вы угадали. Поздравляем!" << endl;
+		}
+	cout << "Нажмите любую кнопку для выхода...";
+	_getch();
+}
