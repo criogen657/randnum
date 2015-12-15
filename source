@@ -5,13 +5,13 @@
 using namespace std;
 void main()
 {
-	time_t ctime = time(0);
-	srand( ctime );
-	int rn = rand() % 100 + 1;
-	int num=-1;
+	time_t ctime = time(0);  	// Сюда записывает время с ПК.
+	srand( ctime ); 	 	// Это время теперь сид для генератора случайных чисел.
+	int rn = rand() % 100 + 1;	// Диапазон чисел от 1 до 100.
+	int num=-1;			// Переменная для угадывания.
 	setlocale(LC_ALL, "rus");
 	cout << "Загадано число о 1 до 100. Вы должны его отгадать."<<endl<<"Введите ваше число и нажмите Enter." << endl;
-	while (num != rn)
+	while (num != rn)		// Цикл для угадывания.
 		{
 		cin >> num;
 		if (num > rn)
